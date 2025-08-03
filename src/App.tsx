@@ -1,24 +1,35 @@
+// src/App.jsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Saludo from './components/Saludo';
+// import AddTaskForm from './components/AddTaskForm';
+// import Contador from './components/Contador'; // Importa el componente Contador
+// import InputDinamico from './components/InputDinamico';
+// import TaskInput from './components/TaskInput';
+// import PruebaJulian from './components/PruebaJulian';
+//  import IvaCalculator from './components/IvaCalculator';
+ import MapNumbers from './components/MapNumbers';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3>¡Hola, React desde Cero!</h3>
+      <Saludo nombre="Juan" />
+      <hr />
+      <MapNumbers/>
+      {/* <AddTaskForm/>
+      <hr />
+      <IvaCalculator/>
+      <hr /> */}
+      {/* <hr />
+      <PruebaJulian/>
+      <hr />
+      <TaskInput/>
+      <hr />
+      <InputDinamico/>
+      <hr /> 
+      <Contador valor_inicial={30}/> 
+      <hr />
+      <Contador valor_inicial={-1}/>  */}
     </div>
   );
 }
