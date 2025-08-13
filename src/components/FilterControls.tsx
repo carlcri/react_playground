@@ -1,21 +1,32 @@
 import React, {useState, ChangeEvent} from "react";
 
 interface FilterControlsProps{
-    onFilterValues: (product_name: string)=>void
+    parentMethod: (event: ChangeEvent<HTMLInputElement>) => void;
+    parentValue: string;
+    uniqueCategories: string[];
+    handleSelectCategory: (event: ChangeEvent<HTMLSelectElement>) => void;
+    category: string;
 }
 
-function FilterControls(props: FilterControlsProps){
-    const [name, setName] = useState<string>('');
-
-    const handleName = (event:ChangeEvent<HTMLInputElement>)=>{
-        setName(event.target.value);
-    }
-    props.onFilterValues(name);
+function FilterControls({parentMethod, 
+                         parentValue, 
+                         uniqueCategories, 
+                         handleSelectCategory,
+                         category}: FilterControlsProps){
     
     return(
         <>
-            <h4>hello filter controls</h4>
-            <input placeholder="ej, microfono" type="text" value={name} onChange={handleName}/>
+            <h4>Buscar Productos</h4>
+            <input placeholder="ej, microfonoo" 
+                   type="text" 
+                   value={parentValue} 
+                   onChange={parentMethod}/>
+            <br />
+            <select name="" id="" value={category} onChange={handleSelectCategory}>
+                {uniqueCategories.map((category, index) => (
+                    <option key={index} value={category}>{category}</option>
+                ))}
+            </select>          
         </>
     );
 }

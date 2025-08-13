@@ -1,6 +1,7 @@
-// src/App.jsx
+//src/App.jsx
 import React from 'react';
 import ProductList from './components/ProductList';
+import FilterExercises from './components/FilterExercises';
 
 
 function App() {
@@ -11,7 +12,11 @@ function App() {
     return (
       <div>
         <h3>¡Hola, React desde Cero!</h3>
+        {/* <FilterExercises/> */}
+        <br />
         <ProductList/>
+        <>
+        </>
       </div>
     );
 }
